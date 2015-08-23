@@ -27,17 +27,14 @@ class CollectionViewController: UICollectionViewController {
         
         let space: CGFloat = 3.0
         let wDimension = ((view.frame.size.width) - (2 * space)) / 3
-        let hDimension = ((view.frame.size.height) - (2 * space)) / 3
+        let hDimension = ((view.frame.size.height) - (2 * space)) / 4
         
         flowlayout.minimumInteritemSpacing = space
+        flowlayout.minimumLineSpacing = space
         flowlayout.itemSize = CGSizeMake(wDimension, hDimension)
     }
     
-    
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+        
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }

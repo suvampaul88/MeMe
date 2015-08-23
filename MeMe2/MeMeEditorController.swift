@@ -44,7 +44,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         formatmemeText("TOP", textfield: textfieldTop)
         formatmemeText("BUTTOM", textfield: textfieldButtom)
         
-//      text alignment
+        //text alignment
         textfieldTop.textAlignment = NSTextAlignment.Center
         textfieldButtom.textAlignment = NSTextAlignment.Center
         
@@ -61,7 +61,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     func formatmemeText(text: String, textfield: UITextField) {
         textfield.text = text
-//      textfield.textAlignment = NSTextAlignment.Center---NOTE: I can never get alignment to work in the method, so placed it in viewDidLoad
+//      textfield.textAlignment = NSTextAlignment.Center---NOTE: I can't seem to set alignment to work in the method, so placed it for textfields in viewDidLoad
         textfield.defaultTextAttributes = memeTextArrributes
         textfield.delegate = self
     }
