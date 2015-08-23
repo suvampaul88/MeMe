@@ -112,7 +112,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
             if (!completed) {
                 return
             }
-            println("Shared video activity: \(activityItem)")
+            println("Shared meme activity: \(activityItem)")
         }
         
         self.presentViewController(activityVC, animated: true, completion: nil)

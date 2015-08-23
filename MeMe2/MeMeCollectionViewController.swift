@@ -13,6 +13,8 @@ class CollectionViewController: UICollectionViewController {
     
     var memes: [Meme]!
     
+    @IBOutlet weak var flowlayout: UICollectionViewFlowLayout!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
@@ -23,6 +25,12 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         
+        let space: CGFloat = 3.0
+        let wDimension = ((view.frame.size.width) - (2 * space)) / 3
+        let hDimension = ((view.frame.size.height) - (2 * space)) / 3
+        
+        flowlayout.minimumInteritemSpacing = space
+        flowlayout.itemSize = CGSizeMake(wDimension, hDimension)
     }
     
     
