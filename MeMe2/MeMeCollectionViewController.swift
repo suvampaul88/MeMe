@@ -21,6 +21,11 @@ class CollectionViewController: UICollectionViewController {
         collectionView!.reloadData()
     }
     
+//    override func viewDidLoad() {
+//        
+//    }
+    
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -43,7 +48,7 @@ class CollectionViewController: UICollectionViewController {
         
         let memedetailcontroller = self.storyboard!.instantiateViewControllerWithIdentifier("MeMeDetailsController") as! MemeDetailsController
         
-        memedetailcontroller.memedImage  = memes[indexPath.item]
+        memedetailcontroller.memed  = self.memes[indexPath.item]
         
         self.navigationController!.pushViewController(memedetailcontroller, animated: true)
     }

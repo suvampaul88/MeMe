@@ -11,14 +11,15 @@ import UIKit
 
 class MemeDetailsController: UIViewController {
     
-    var memedImage : Meme!
+    var memed : Meme!
     
     @IBOutlet weak var selectedMemedImage: UIImageView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        selectedMemedImage.image = memedImage.memeImage
+      selectedMemedImage.image = memed.memeImage
+        
         
     }
 

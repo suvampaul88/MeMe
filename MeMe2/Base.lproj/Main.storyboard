@@ -61,7 +61,6 @@
         <!--SentMemes-->
         <scene sceneID="QNW-zc-S5L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BmY-8T-cRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController title="SentMemes" id="UUj-8Z-KDu" customClass="CollectionViewController" customModule="MeMe2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Nks-D2-C6v">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -99,6 +98,7 @@
                         <segue destination="HLB-wf-1KK" kind="show" identifier="showdetailsview" id="voG-1E-LRn"/>
                     </connections>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmY-8T-cRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-302" y="1414"/>
         </scene>
@@ -125,7 +125,6 @@
         <!--CollectionView-->
         <scene sceneID="pjb-iT-yjq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vTr-Jg-L5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="CollectionView" id="gI2-Wo-jkE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Collection" id="fuS-yu-pnW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="re7-qT-4ix">
@@ -136,6 +135,7 @@
                         <segue destination="UUj-8Z-KDu" kind="relationship" relationship="rootViewController" id="PQO-oz-2tZ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTr-Jg-L5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1186" y="1414"/>
         </scene>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="631" y="1656"/>
         </scene>
-        <!--MeMeDetailsController-->
+        <!--MeMe Details-->
         <scene sceneID="lxU-NW-DSM">
             <objects>
-                <viewController storyboardIdentifier="MeMeDetailsController" title="MeMeDetailsController" id="QWf-Ig-Pb6" customClass="MemeDetailsController" customModule="MeMe2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeMeDetailsController" title="MeMe Details" id="QWf-Ig-Pb6" customClass="MemeDetailsController" customModule="MeMe2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luf-Tn-wmv"/>
                         <viewControllerLayoutGuide type="bottom" id="jiW-2w-a7F"/>
@@ -296,7 +296,7 @@
         <image name="Table" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mZQ-4f-2yd"/>
-        <segue reference="voG-1E-LRn"/>
+        <segue reference="3TL-Bt-mvi"/>
+        <segue reference="m6B-GQ-NmP"/>
     </inferredMetricsTieBreakers>
 </document>
