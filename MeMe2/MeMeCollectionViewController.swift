@@ -21,9 +21,9 @@ class CollectionViewController: UICollectionViewController {
         collectionView!.reloadData()
     }
     
-//    override func viewDidLoad() {
-//        
-//    }
+    override func viewDidLoad() {
+        
+    }
     
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

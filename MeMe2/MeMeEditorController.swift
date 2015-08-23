@@ -44,7 +44,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         formatmemeText("TOP", textfield: textfieldTop)
         formatmemeText("BUTTOM", textfield: textfieldButtom)
         
-        //text alignment
+//      text alignment
         textfieldTop.textAlignment = NSTextAlignment.Center
         textfieldButtom.textAlignment = NSTextAlignment.Center
         
@@ -54,13 +54,14 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     let memeTextArrributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 38)!,
         NSStrokeWidthAttributeName : NSNumber(float: -3.0)
     ]
     
     
     func formatmemeText(text: String, textfield: UITextField) {
         textfield.text = text
+//      textfield.textAlignment = NSTextAlignment.Center---NOTE: I can never get alignment to work in the method, so placed it in viewDidLoad
         textfield.defaultTextAttributes = memeTextArrributes
         textfield.delegate = self
     }
@@ -105,8 +106,13 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         let memedImage = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {
-            (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
+            (activityItem: String!, completed: Bool, item: [AnyObject]!, error:NSError!) -> Void in
             self.save()
+            
+            if (!completed) {
+                return
+            }
+            println("Shared video activity: \(activityItem)")
         }
         
         self.presentViewController(activityVC, animated: true, completion: nil)
@@ -193,9 +199,8 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     func save() {
-        //create the meme
         var memedImage = generateMemedImage()
-        var meme = Meme(topText: textfieldTop.text!, bottomText: textfieldButtom.text!, originalImage: imageView.image!, memeImage: generateMemedImage()) //memedImage
+        var meme = Meme(topText: textfieldTop.text!, bottomText: textfieldButtom.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
         
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate

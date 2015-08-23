@@ -43,6 +43,8 @@ class MeMeTableViewController: UITableViewController {
         return cell
     }
     
+    
+    //NOTE: I can't seem to get to details view controller from table view
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
         let memedetailcontroller = self.storyboard!.instantiateViewControllerWithIdentifier("MeMeDetailsController") as! MemeDetailsController
