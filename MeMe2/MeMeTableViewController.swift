@@ -32,7 +32,7 @@ class MeMeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("memeTableViewCell") as! UITableViewCell
-        let meme = self.memes[indexPath.row]
+        let meme = memes[indexPath.row]
         
         cell.textLabel?.text = meme.topText + "-" + meme.bottomText
         cell.imageView?.image = meme.memeImage
@@ -46,9 +46,9 @@ class MeMeTableViewController: UITableViewController {
         
         let memedetailcontroller = self.storyboard!.instantiateViewControllerWithIdentifier("MeMeDetailsController") as! MemeDetailsController
         
-        memedetailcontroller.memed = self.memes[indexPath.row]
+        memedetailcontroller.memed = memes[indexPath.row]
         
-        self.navigationController!.pushViewController(memedetailcontroller, animated: true)
+        navigationController!.pushViewController(memedetailcontroller, animated: true)
     
     }
 }

@@ -102,15 +102,18 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {
             (activityItem: String!, completed: Bool, item: [AnyObject]!, error:NSError!) -> Void in
-            self.save()
-            
             if (!completed) {
+                println("cancelled")
                 return
             }
-            println("Shared meme activity: \(activityItem)")
-        }
+            
+            else {
+                self.save()
+                println("Shared meme activity: \(activityItem)")
         
-        self.presentViewController(activityVC, animated: true, completion: nil)
+            }
+        }
+            self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
     
@@ -172,9 +175,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     //hide keyboard
     
     func keyboardWillHide(notification: NSNotification){
-        if textfieldButtom.isFirstResponder(){
             view.frame.origin.y += getKeyboardHeight(notification)
-        }
     }
     
     

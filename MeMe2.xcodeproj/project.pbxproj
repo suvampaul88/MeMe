@@ -87,7 +87,6 @@
 			children = (
 				B1380D921B893426005EA70D /* Main.storyboard */,
 				B1380DAE1B89391E005EA70D /* View Controllers */,
-				B1380DB41B895142005EA70D /* Views */,
 				B1380DAF1B893BE1005EA70D /* Meme Model */,
 				B1380D8E1B893426005EA70D /* AppDelegate.swift */,
 				B1380D951B893426005EA70D /* Images.xcassets */,
@@ -139,13 +138,6 @@
 				B1380DB01B893BFD005EA70D /* MemeModel.swift */,
 			);
 			name = "Meme Model";
-			sourceTree = "<group>";
-		};
-		B1380DB41B895142005EA70D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

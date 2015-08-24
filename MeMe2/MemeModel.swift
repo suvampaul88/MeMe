@@ -6,23 +6,14 @@
 //  Copyright (c) 2015 Suvam Paul. All rights reserved.
 //
 
-import Foundation
-
 
 import Foundation
 import UIKit
 
-class Meme {
+struct Meme {
     var topText: String
     var bottomText: String
     var originalImage: UIImage
     var memeImage: UIImage
-    
-    init(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage) {
-        self.topText = topText
-        self.bottomText = bottomText
-        self.originalImage = originalImage
-        self.memeImage = memeImage
-    }
 }
 
