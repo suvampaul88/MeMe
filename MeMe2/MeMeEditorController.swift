@@ -73,6 +73,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         //unsunscribe from notification
         self.unsubscribeFromKeyboardNotification()
     }
@@ -128,7 +129,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            imageView.contentMode = UIViewContentMode.ScaleToFill
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
             dismissViewControllerAnimated(true, completion: nil)
             
             sharememeButton.enabled = true
