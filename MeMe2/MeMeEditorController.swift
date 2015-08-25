@@ -81,7 +81,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = sourceType
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
         
     }
@@ -113,7 +113,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         
             }
         }
-            self.presentViewController(activityVC, animated: true, completion: nil)
+            presentViewController(activityVC, animated: true, completion: nil)
     }
     
     
@@ -127,9 +127,9 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageView.image = image
-            self.imageView.contentMode = UIViewContentMode.ScaleToFill
-            self.dismissViewControllerAnimated(true, completion: nil)
+            imageView.image = image
+            imageView.contentMode = UIViewContentMode.ScaleToFill
+            dismissViewControllerAnimated(true, completion: nil)
             
             sharememeButton.enabled = true
             
@@ -137,7 +137,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -175,7 +175,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     //hide keyboard
     
     func keyboardWillHide(notification: NSNotification){
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
     }
     
     
@@ -208,18 +208,18 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     func generateMemedImage() -> UIImage {
         
-        self.toolBar.hidden = true
-        self.navigationBar.hidden = true
+        toolBar.hidden = true
+        navigationBar.hidden = true
         
         //render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        self.toolBar.hidden = false
-        self.navigationBar.hidden = false
+        toolBar.hidden = false
+        navigationBar.hidden = false
         
         
         return memedImage
