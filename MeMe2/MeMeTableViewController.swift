@@ -31,7 +31,7 @@ class MeMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("memeTableViewCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("memeTableViewCell") as UITableViewCell!
         let meme = memes[indexPath.row]
         
         cell.textLabel?.text = meme.topText + "-" + meme.bottomText

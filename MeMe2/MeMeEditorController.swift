@@ -102,15 +102,15 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         let memedImage = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {
-            (activityItem: String!, completed: Bool, item: [AnyObject]!, error:NSError!) -> Void in
+            (activityItem: String?, completed: Bool, item: [AnyObject]?, error:NSError?) -> Void in
             if (!completed) {
-                println("cancelled")
+                print("cancelled")
                 return
             }
             
             else {
                 self.save()
-                println("Shared meme activity: \(activityItem)")
+                print("Shared meme activity: \(activityItem)")
         
             }
         }
@@ -125,7 +125,7 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     //choose image
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
@@ -196,8 +196,8 @@ class MeMeEditorController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     func save() {
-        var memedImage = generateMemedImage()
-        var meme = Meme(topText: textfieldTop.text!, bottomText: textfieldButtom.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
+        let memedImage = generateMemedImage()
+        let meme = Meme(topText: textfieldTop.text!, bottomText: textfieldButtom.text!, originalImage: imageView.image!, memeImage: memedImage)
         
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
